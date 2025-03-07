@@ -19,7 +19,7 @@
 // WiFi and AP Configuration
 #define WIFI_SSID_ADDR 0
 #define WIFI_PASS_ADDR 50
-const char* ap_ssid = "AWRL-RX_Config";
+const char* ap_ssid = "Wifi Login_SB";
 const char* ap_password = "12345678";
 
 // Firebase configuration
@@ -331,25 +331,19 @@ void displayDateTime() {
 void updateDisplay(const SensorData& data) {
     tft.fillRect(0, 16, tft.width(), 89, BACKGROUND);
     
-    // Display Current Reading - now showing the submersible sensor current
+    // Display Water Depth with Current in parentheses
     tft.setTextColor(TEXT_COLOR);
     tft.setCursor(5, 20);
-    tft.print("Current: ");
-    tft.setTextColor(VALUE_COLOR);
-    tft.print(data.current, 2);
-    tft.println(" mA");
-    
-    // Display Water Depth
-    tft.setTextColor(TEXT_COLOR);
-    tft.setCursor(5, 35);
     tft.print("Depth: ");
     tft.setTextColor(VALUE_COLOR);
     tft.print(data.waterDepth, 1);
-    tft.println(" cm");
+    tft.print(" cm (");
+    tft.print(data.current, 2);
+    tft.println(" mA)");
     
     // Display Temperature
     tft.setTextColor(TEXT_COLOR);
-    tft.setCursor(5, 50);
+    tft.setCursor(5, 35);
     tft.print("Temp: ");
     if(data.temperature != -127) {
         tft.setTextColor(VALUE_COLOR);
@@ -362,7 +356,7 @@ void updateDisplay(const SensorData& data) {
     
     // Display Turbidity
     tft.setTextColor(TEXT_COLOR);
-    tft.setCursor(5, 65);
+    tft.setCursor(5, 50);
     tft.print("Turbidity: ");
     tft.setTextColor(VALUE_COLOR);
     tft.print(data.turbidity, 1);
@@ -370,7 +364,7 @@ void updateDisplay(const SensorData& data) {
     
     // Display Signal Strength
     tft.setTextColor(TEXT_COLOR);
-    tft.setCursor(5, 80);
+    tft.setCursor(5, 65);
     tft.print("Signal: ");
     
     if (data.rssi >= -50) {
