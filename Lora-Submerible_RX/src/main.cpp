@@ -23,10 +23,10 @@ const char* ap_ssid = "Wifi Login_SB";
 const char* ap_password = "12345678";
 
 // Firebase configuration
-#define API_KEY "AIzaSyCTjgXOengQjinmKz5hB7IwaLN1cVylOBs"
+#define API_KEY "APIDB"
 #define DATABASE_URL "https://awrl-49c31-default-rtdb.asia-southeast1.firebasedatabase.app/"
 #define USER_EMAIL "awrlsubmersible@gmail.com"
-#define USER_PASSWORD "sinaubumi123"
+#define USER_PASSWORD "s"
 
 // Firebase objects
 FirebaseData fbdo;
