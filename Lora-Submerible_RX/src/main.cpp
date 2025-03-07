@@ -425,7 +425,7 @@ void setup() {
     LoRa.setSignalBandwidth(250E3);     // Changed bandwidth from 500kHz to 250kHz
     LoRa.setSpreadingFactor(8);         // Increased spreading factor from 7 to 8
     LoRa.setCodingRate4(6);             // Changed coding rate from 4/5 to 4/6
-    LoRa.setSyncWord(0xA5);             // Changed sync word from 0xF0 to 0xA5
+    LoRa.setSyncWord(0xA5);             // Changed sync word from 0xF0 to 0xA5 for submersible parameter
     LoRa.enableCrc();
     
     Serial.println("Setup Complete!");
